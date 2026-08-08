@@ -1,0 +1,12 @@
+default_repository: .
+protected_branches: [main, master]
+command_timeout_seconds: 120
+lint_commands: []
+test_commands: []
+minimum_coverage: 0
+blocking_severity: critical
+max_diff_bytes: 1000000
+approval_ttl_seconds: 900
+push_enabled: true
+ai_provider: local
+allowed_repository_roots: []

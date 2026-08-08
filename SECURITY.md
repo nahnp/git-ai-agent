@@ -24,3 +24,7 @@ Enquanto o projeto estiver em `0.x`, apenas a última versão minor publicada re
 ## Divulgação Responsável
 
 Concedemos crédito público a quem reportar vulnerabilidades de forma responsável, salvo preferência contrária do relator, após o patch correspondente ser publicado.
+
+## Modelo de ameaça do protótipo
+
+O scanner regex é preventivo e não substitui Gitleaks. Achados nunca repetem o valor detectado e sempre bloqueiam commit. Subprocessos usam listas de argumentos, timeout e `shell=False`; force-push e comandos destrutivos não existem. Lint e testes executam código do repositório e, portanto, só devem ser habilitados para código confiável ou em ambiente isolado.

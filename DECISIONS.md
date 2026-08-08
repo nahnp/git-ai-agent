@@ -42,3 +42,10 @@ Formato de cada entrada: Data | Contexto | Decisão | Alternativas consideradas 
 ---
 
 > Toda nova decisão estrutural relevante deve ser adicionada aqui **antes** de ser implementada, e referenciada em `ARCHITECTURE.md` quando aplicável.
+
+## ADR-006 — Sessões de aprovação vinculadas ao estado do Git
+- **Data**: 2026-08-07
+- **Contexto**: Uma confirmação textual não impede que o diff ou a branch mude antes do commit.
+- **Decisão**: Persistir sessão com repositório, branch, fingerprint SHA-256, arquivos, mensagem, comandos planejados e expiração; revalidar tudo imediatamente antes do `add`/`commit`. Push exige confirmação independente.
+- **Alternativas consideradas**: confirmação simples; token sem snapshot; commit e push numa única ação.
+- **Impacto**: reduz TOCTOU e ações acidentais; sessões expiram e precisam ser refeitas quando qualquer dado muda.

@@ -1,0 +1,14 @@
+default_repository: .
+protected_branches: [main]
+command_timeout_seconds: 120
+lint_commands:
+  - [ruff, check, .]
+test_commands:
+  - [pytest, -q]
+minimum_coverage: 85
+blocking_severity: critical
+max_diff_bytes: 1000000
+approval_ttl_seconds: 900
+push_enabled: false
+ai_provider: local
+allowed_repository_roots: []
